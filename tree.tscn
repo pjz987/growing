@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm72xli1u4mr2"]
+
+[ext_resource type="Texture2D" uid="uid://dbn2qk4vitiwf" path="res://icon.svg" id="1_brfkd"]
+[ext_resource type="Script" uid="uid://bo0bmw5fn8uir" path="res://tree.gd" id="1_nnvrw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brfkd"]
+size = Vector2(32, 32)
+
+[node name="Tree" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_nnvrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_brfkd")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.607811, 0.215425, 0.0468462, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_brfkd")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

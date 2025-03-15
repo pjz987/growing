@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://7l3fex73xmm3"]
+
+[ext_resource type="Texture2D" uid="uid://dbn2qk4vitiwf" path="res://icon.svg" id="1_48i4k"]
+[ext_resource type="Script" uid="uid://wp2krpg58i32" path="res://squirrel.gd" id="1_k138s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k138s"]
+size = Vector2(12, 12)
+
+[node name="Squirrel" type="CharacterBody2D"]
+script = ExtResource("1_k138s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k138s")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.22417, 0.523904, 0.255651, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_48i4k")
