@@ -7,6 +7,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var max_speed = 128
 @export var friction = 0.2
 
+
 func _physics_process(delta: float) -> void:
 
 	# Add the gravity.

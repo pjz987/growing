@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://djo4o00v5h1nb"]
+[gd_scene load_steps=6 format=3 uid="uid://djo4o00v5h1nb"]
 
 [ext_resource type="Script" uid="uid://dm62xc0k28u7a" path="res://level.gd" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cm72xli1u4mr2" path="res://tree.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://7l3fex73xmm3" path="res://squirrel.tscn" id="2_vonw3"]
+[ext_resource type="PackedScene" uid="uid://dpli2lma2upw4" path="res://ui.tscn" id="4_0b4ue"]
+[ext_resource type="PackedScene" uid="uid://b5fs103misupn" path="res://acorn.tscn" id="5_f2txt"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_oi3di")
@@ -24,7 +26,9 @@ polygon = PackedVector2Array(1, 179, 320, 179, 320, 60, 256, 60, 256, 155, 0, 16
 [node name="Squirrel" parent="." instance=ExtResource("2_vonw3")]
 position = Vector2(20, 137)
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "acorns: 2, water buckets: 3"
+[node name="UI" parent="." instance=ExtResource("4_0b4ue")]
+offset_right = 127.0
+
+[node name="Acorn" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(118, 81)
+pause_before_sprouting = 0.7
