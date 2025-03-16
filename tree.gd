@@ -7,9 +7,10 @@ func _ready() -> void:
 	grow()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and is_mouse_over:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and is_mouse_over and Globals.water > 0:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
 			Utils.instantiate_scene_on_level(TREE_SCENE, global_position)
+			Globals.water -= 1
 			input_pickable = false
 
 func grow():
