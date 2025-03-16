@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://djo4o00v5h1nb"]
 
 [ext_resource type="Script" uid="uid://dm62xc0k28u7a" path="res://level.gd" id="1_oi3di"]
-[ext_resource type="PackedScene" uid="uid://cm72xli1u4mr2" path="res://tree.tscn" id="1_u52ul"]
+[ext_resource type="PackedScene" uid="uid://cm72xli1u4mr2" path="res://tree_base.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://7l3fex73xmm3" path="res://squirrel.tscn" id="2_vonw3"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_oi3di")
 
 [node name="Tree" parent="." instance=ExtResource("1_u52ul")]
-position = Vector2(139, 194)
+position = Vector2(139, 164)
 
 [node name="Tree3" parent="." instance=ExtResource("1_u52ul")]
-position = Vector2(211, 193)
+position = Vector2(207, 164)
 
 [node name="Tree2" parent="." instance=ExtResource("1_u52ul")]
-position = Vector2(68, 194)
+position = Vector2(68, 165)
 
 [node name="Land" type="StaticBody2D" parent="."]
 
