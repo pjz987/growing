@@ -14,10 +14,10 @@ var tree_trunks: Array[StaticBody2D] = []
 var my_trunk_maker = TrunkMaker.new()
 
 func get_grow_vector():
-	if tree_index + 2 > tree_shape.size():
+	tree_index += 1
+	if tree_index > tree_shape.size() - 1:
 		return Vector2(0, 0)
 	else:
-		tree_index += 1
 		return tree_shape[tree_index]
 
 func _ready():
