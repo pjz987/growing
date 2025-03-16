@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bo0bmw5fn8uir" path="res://tree_base.gd" id="1_nnvrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brfkd"]
-size = Vector2(32, 32)
+size = Vector2(12, 12)
 
 [node name="TreeBase" type="StaticBody2D"]
 input_pickable = true
@@ -15,7 +15,7 @@ shape = SubResource("RectangleShape2D_brfkd")
 
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(0.607811, 0.215425, 0.0468462, 1)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_brfkd")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

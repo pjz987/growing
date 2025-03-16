@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dbn2qk4vitiwf" path="res://icon.svg" id="2_uenuv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb8ko"]
-size = Vector2(32, 32)
+size = Vector2(12, 12)
 
 [node name="TreeTrunk" type="StaticBody2D"]
 position = Vector2(154, 108)
@@ -16,7 +16,7 @@ shape = SubResource("RectangleShape2D_sb8ko")
 
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(0.607811, 0.215425, 0.0468462, 1)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_uenuv")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
