@@ -2,14 +2,13 @@ class_name TreeTrunk
 extends AbstractTree
 
 var tree_base: StaticBody2D
-const TREE_TRUNK_SCENE = preload("res://tree_trunk.tscn")
+var my_trunk_maker = TrunkMaker.new()
 
 func _ready() -> void:
 	grow()
 
 func _create_trunk():
-	var new_trunk := Utils.instantiate_scene_on_level(TREE_TRUNK_SCENE, global_position)
-	new_trunk.tree_base = tree_base
+	var new_trunk = my_trunk_maker.make_trunk(position, tree_base)
 	input_pickable = false
 	tree_base.silly()
 	tree_base.tree_trunks.append(new_trunk)
