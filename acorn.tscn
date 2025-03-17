@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5fs103misupn"]
 
 [ext_resource type="Script" uid="uid://bmchgkcjleiey" path="res://acorn.gd" id="1_erywe"]
-[ext_resource type="Texture2D" uid="uid://dbn2qk4vitiwf" path="res://icon.svg" id="1_pjgfi"]
+[ext_resource type="Texture2D" uid="uid://dvj72hqn60eiy" path="res://assets/acorn.png" id="2_erywe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pjgfi"]
 bounce = 0.35
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_erywe"]
-radius = 2.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_erywe"]
+radius = 5.0
+height = 16.0
 
 [node name="Acorn" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_pjgfi")
@@ -15,12 +16,10 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_erywe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_erywe")
-
 [node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(0.964269, 0.191822, 0.969125, 1)
-scale = Vector2(0.025, 0.025)
-texture = ExtResource("1_pjgfi")
+texture = ExtResource("2_erywe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_erywe")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

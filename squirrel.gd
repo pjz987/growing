@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_force = -256
 @export var max_speed = 128
 @export var friction = 0.2
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -29,5 +30,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = lerp(velocity.x, 0.0, friction)
 	velocity.x = clamp(velocity.x, -max_speed, max_speed)
+	
+	if direction:
+		sprite_2d.scale.x = direction
 	
 	move_and_slide()
