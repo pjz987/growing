@@ -9,11 +9,13 @@ var is_sprout := true
 
 func _ready() -> void:
 	$Sprite2D.texture = TREE_SPROUT
+	$Sprout.play()
 
 func _create_trunk():
 	var new_trunk = my_trunk_maker.make_trunk(position, self)
 	tree_trunks.append(new_trunk)
 	input_pickable = false
+	$Sprout.play()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and is_mouse_over and not is_growing:
@@ -22,6 +24,7 @@ func _input(event: InputEvent) -> void:
 				is_growing = true
 				is_sprout = false
 				$Sprite2D.texture = TREE_BASE
+				$Sprout.play()
 				await get_tree().create_timer(0.2).timeout
 				is_growing = false
 			else:

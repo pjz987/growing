@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fhxl8j87wlmo"
+path="res://.godot/imported/ESM_Ninja_Jump_2_Airy_Whoosh_Pass_By (1).wav-7a7d3139444d7932e88680556cd5468d.sample"
+
+[deps]
+
+source_file="res://audio/ESM_Ninja_Jump_2_Airy_Whoosh_Pass_By (1).wav"
+dest_files=["res://.godot/imported/ESM_Ninja_Jump_2_Airy_Whoosh_Pass_By (1).wav-7a7d3139444d7932e88680556cd5468d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

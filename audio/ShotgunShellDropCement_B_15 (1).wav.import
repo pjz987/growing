@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cig8wcq47utma"
+path="res://.godot/imported/ShotgunShellDropCement_B_15 (1).wav-f3b0367829842d49c0ba5d4b12a7727a.sample"
+
+[deps]
+
+source_file="res://audio/ShotgunShellDropCement_B_15 (1).wav"
+dest_files=["res://.godot/imported/ShotgunShellDropCement_B_15 (1).wav-f3b0367829842d49c0ba5d4b12a7727a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

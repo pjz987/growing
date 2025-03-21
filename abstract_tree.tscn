@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c68bqhoq71dtp"]
+[gd_scene load_steps=3 format=3 uid="uid://c68bqhoq71dtp"]
 
 [ext_resource type="Script" uid="uid://d011x6y0rae6n" path="res://abstract_tree.gd" id="1_bfleh"]
+[ext_resource type="AudioStream" uid="uid://dcfxry31a4xyv" path="res://audio/plant noise.wav" id="2_qlgmo"]
 
 [node name="AbstractTree" type="StaticBody2D"]
 script = ExtResource("1_bfleh")
+
+[node name="Sprout" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_qlgmo")
+volume_db = 7.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm72xli1u4mr2"]
+[gd_scene load_steps=4 format=3 uid="uid://cm72xli1u4mr2"]
 
 [ext_resource type="Script" uid="uid://bo0bmw5fn8uir" path="res://tree_base.gd" id="1_nnvrw"]
+[ext_resource type="AudioStream" uid="uid://dcfxry31a4xyv" path="res://audio/plant noise.wav" id="2_j5sjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brfkd"]
 size = Vector2(16, 32)
@@ -13,6 +14,10 @@ script = ExtResource("1_nnvrw")
 shape = SubResource("RectangleShape2D_brfkd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Sprout" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_j5sjl")
+volume_db = 7.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

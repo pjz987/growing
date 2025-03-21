@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5fs103misupn"]
+[gd_scene load_steps=6 format=3 uid="uid://b5fs103misupn"]
 
 [ext_resource type="Script" uid="uid://bmchgkcjleiey" path="res://acorn.gd" id="1_erywe"]
 [ext_resource type="Texture2D" uid="uid://dvj72hqn60eiy" path="res://assets/acorn.png" id="2_erywe"]
+[ext_resource type="AudioStream" uid="uid://cig8wcq47utma" path="res://audio/ShotgunShellDropCement_B_15 (1).wav" id="3_cq1xx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pjgfi"]
 bounce = 0.35
@@ -21,5 +22,10 @@ texture = ExtResource("2_erywe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_erywe")
+
+[node name="Impact" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cq1xx")
+volume_db = 2.0
+pitch_scale = 0.9
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
