@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm72xli1u4mr2"]
+[gd_scene load_steps=3 format=3 uid="uid://cm72xli1u4mr2"]
 
-[ext_resource type="Script" uid="uid://bo0bmw5fn8uir" path="res://tree.gd" id="1_nnvrw"]
-[ext_resource type="Texture2D" uid="uid://dxipn0fbakkaf" path="res://assets/tree-trunk.png" id="2_nnvrw"]
+[ext_resource type="Script" uid="uid://bo0bmw5fn8uir" path="res://tree_base.gd" id="1_nnvrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brfkd"]
 size = Vector2(16, 32)
@@ -13,8 +12,7 @@ script = ExtResource("1_nnvrw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_brfkd")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_nnvrw")
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
