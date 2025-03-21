@@ -13,6 +13,7 @@ size = Vector2(62, 35)
 script = ExtResource("1_oi3di")
 number_of_acorns = 3
 number_of_water = 6
+scene_transition_time = 1.5
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
@@ -43,6 +44,9 @@ offset_right = 34.0
 offset_bottom = -13.0
 text = "you win"
 
-[connection signal="area_entered" from="Goal" to="." method="_on_goal_area_entered"]
-[connection signal="area_shape_entered" from="Goal" to="." method="_on_goal_area_shape_entered"]
+[node name="BlackoutLayer" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 192.0
+color = Color(0.129412, 0.0941176, 0.105882, 0)
+
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]

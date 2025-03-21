@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=4 uid="uid://3h32ocl4xydt"]
+
+[ext_resource type="PackedScene" uid="uid://djo4o00v5h1nb" path="res://level.tscn" id="1_apjhw"]
+
+[node name="Level_02" instance=ExtResource("1_apjhw")]
+
+[node name="GroundTileMap" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAJAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAA=")
+
+[node name="Squirrel" parent="." index="2"]
+position = Vector2(19, 42)
+
+[node name="Goal" parent="." index="4"]
+position = Vector2(282, 104)
