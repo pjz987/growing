@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdm278c68si7d"]
+[gd_scene load_steps=5 format=3 uid="uid://cdm278c68si7d"]
 
 [ext_resource type="Script" uid="uid://kh50xqr48jhm" path="res://tree_trunk.gd" id="1_8fnex"]
 [ext_resource type="Texture2D" uid="uid://dxipn0fbakkaf" path="res://assets/tree-trunk.png" id="2_uenuv"]
+[ext_resource type="PackedScene" uid="uid://dmwrjxynm61ec" path="res://tree_top_sprite.tscn" id="3_sb8ko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb8ko"]
 size = Vector2(32, 32)
@@ -14,8 +15,10 @@ script = ExtResource("1_8fnex")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sb8ko")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TreeTrunkSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_uenuv")
+
+[node name="TreeTopSprite" parent="." instance=ExtResource("3_sb8ko")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

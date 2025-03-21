@@ -5,6 +5,7 @@ var is_mouse_over := false
 var is_growing := false
 
 func grow():
+	Globals.water -= 1
 	is_growing = true
 	var tween = get_tree().create_tween()
 	tween.connect("finished", _grow_finished)
