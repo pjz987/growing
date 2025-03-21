@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Utils="*res://utils.gd"
 Globals="*res://globals.gd"
+MasterAudio="*res://master_audio.tscn"
 
 [display]
 
