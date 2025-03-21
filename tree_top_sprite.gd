@@ -4,5 +4,5 @@ extends Sprite2D
 
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
-func _ready() -> void:
-	gpu_particles_2d.material.emitting = true
+#func _ready() -> void:
+	#gpu_particles_2d.process_material.emitting = true

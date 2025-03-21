@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c68bqhoq71dtp"]
+
+[ext_resource type="Script" uid="uid://d011x6y0rae6n" path="res://abstract_tree.gd" id="1_bfleh"]
+
+[node name="AbstractTree" type="StaticBody2D"]
+script = ExtResource("1_bfleh")
