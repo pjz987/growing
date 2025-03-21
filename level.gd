@@ -4,29 +4,31 @@ const ACORN_SCENE = preload("res://acorn.tscn")
 
 @export var number_of_acorns := 0
 @export var number_of_water := 0
+@export var fade_in_out_time := 1.0
+@export var next_level_path := "res://level.tscn"
 
 @onready var goal_label: Label = $Goal/GoalLabel
+@onready var blackout_layer: ColorRect = $BlackoutLayer
+
+var next_level_scene: PackedScene
 
 func _ready() -> void:
 	Globals.acorns = number_of_acorns
 	Globals.water = number_of_water
+	blackout_layer.visible = true
+	blackout_layer.color.a = 1.0
+	next_level_scene = load(next_level_path)
+	await get_tree().create_tween().tween_property(blackout_layer, "color:a", 0.0, fade_in_out_time).finished
+	blackout_layer.visible = false
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT
 		and event.pressed == true and Globals.acorns > 0):
-		print(event.position)
-		print(event)
 		Globals.acorns -= 1
 		Utils.instantiate_scene_on_level(ACORN_SCENE, event.position)
 
-
-#func _on_goal_area_entered(area: Area2D) -> void:
-	#goal_label.visible = true
-#
-#
 func _on_goal_body_entered(body: Node2D) -> void:
 	goal_label.visible = true
-
-
-func _on_goal_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	goal_label.visible = true
+	blackout_layer.visible = true
+	await get_tree().create_tween().tween_property(blackout_layer, "color:a", 1.0, fade_in_out_time).finished
+	get_tree().change_scene_to_packed(next_level_scene)

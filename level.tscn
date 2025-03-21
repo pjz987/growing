@@ -43,6 +43,10 @@ offset_right = 34.0
 offset_bottom = -13.0
 text = "you win"
 
-[connection signal="area_entered" from="Goal" to="." method="_on_goal_area_entered"]
-[connection signal="area_shape_entered" from="Goal" to="." method="_on_goal_area_shape_entered"]
+[node name="BlackoutLayer" type="ColorRect" parent="."]
+visible = false
+offset_right = 320.0
+offset_bottom = 192.0
+color = Color(0.160784, 0.113725, 0.168627, 0)
+
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
