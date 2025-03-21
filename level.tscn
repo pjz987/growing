@@ -49,4 +49,11 @@ offset_right = 320.0
 offset_bottom = 192.0
 color = Color(0.160784, 0.113725, 0.168627, 0)
 
+[node name="BlackoutLayer2" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+offset_right = 320.0
+offset_bottom = 192.0
+color = Color(0.160784, 0.113725, 0.168627, 0)
+
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
