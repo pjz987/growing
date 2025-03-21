@@ -8,6 +8,8 @@ const TREE_SPROUT = preload("res://assets/sprout.png")
 var is_sprout := true
 
 func _ready() -> void:
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(2, true)
 	$Sprite2D.texture = TREE_SPROUT
 
 func _create_trunk():
@@ -19,6 +21,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and is_mouse_over and not is_growing:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if is_sprout:
+				set_collision_layer_value(1, true)
+				set_collision_layer_value(2, false)
 				is_growing = true
 				is_sprout = false
 				$Sprite2D.texture = TREE_BASE
