@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brfkd"]
 size = Vector2(16, 32)
 
-[node name="Tree" type="StaticBody2D"]
+[node name="TreeBase" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource("1_nnvrw")
 
