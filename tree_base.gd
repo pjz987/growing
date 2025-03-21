@@ -9,13 +9,6 @@ func _create_trunk():
 	tree_trunks.append(new_trunk)
 	input_pickable = false
 
-func silly() -> void:
-	position.x += 3
-	rotate(-.0625)
-	for one_static_body in tree_trunks:
-		one_static_body.position.x += 3
-		one_static_body.rotate(-.0625)
-		
 func _input(event: InputEvent) -> void:
 	super._input(event)
 	

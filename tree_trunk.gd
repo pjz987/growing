@@ -10,7 +10,6 @@ func _ready() -> void:
 func _create_trunk():
 	var new_trunk = my_trunk_maker.make_trunk(position, tree_base)
 	input_pickable = false
-	tree_base.silly()
 	tree_base.tree_trunks.append(new_trunk)
 
 func _input(event: InputEvent) -> void:
