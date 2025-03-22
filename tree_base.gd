@@ -35,7 +35,7 @@ func _create_trunk() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and is_mouse_over and not is_growing:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT and Globals.check_water():
 			if is_sprout:
 				set_collision_layer_value(1, true)
 				set_collision_layer_value(2, false)
