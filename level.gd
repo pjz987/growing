@@ -16,6 +16,7 @@ var next_level_scene: PackedScene
 func _ready() -> void:
 	Globals.acorns = number_of_acorns
 	Globals.water = number_of_water
+	Globals.refresh_text.emit()
 	blackout_layer.visible = true
 	blackout_layer.color.a = 1.0
 	next_level_scene = load(next_level_path)
@@ -28,8 +29,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT
-		and event.pressed == true and Globals.acorns > 0):
-		Globals.acorns -= 1
+		and event.pressed == true and Globals.check_acorns()):
 		Utils.instantiate_scene_on_level(ACORN_SCENE, event.position)
 
 func _on_goal_body_entered(body: Node2D) -> void:
