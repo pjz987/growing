@@ -57,5 +57,5 @@ func _physics_process(delta: float) -> void:
 	if stepping and (not direction or not is_on_floor()):
 		stepping = false
 		$StepSound.stop()
-		print("stepping as stopped")
+		#print("stepping as stopped")
 		
