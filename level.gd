@@ -9,6 +9,7 @@ const ACORN_SCENE = preload("res://acorn.tscn")
 
 @onready var goal_label: Label = $Goal/GoalLabel
 @onready var blackout_layer: ColorRect = $BlackoutLayer
+@onready var blackout_layer_2: ColorRect = $BlackoutLayer2
 
 var next_level_scene: PackedScene
 
@@ -21,6 +22,10 @@ func _ready() -> void:
 	await get_tree().create_tween().tween_property(blackout_layer, "color:a", 0.0, fade_in_out_time).finished
 	blackout_layer.visible = false
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
+
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT
 		and event.pressed == true and Globals.acorns > 0):
@@ -30,5 +35,9 @@ func _input(event: InputEvent) -> void:
 func _on_goal_body_entered(body: Node2D) -> void:
 	goal_label.visible = true
 	blackout_layer.visible = true
+	blackout_layer_2.visible = true
 	await get_tree().create_tween().tween_property(blackout_layer, "color:a", 1.0, fade_in_out_time).finished
+	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_tween().tween_property(blackout_layer_2, "color:a", 1.0, fade_in_out_time).finished
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_packed(next_level_scene)
