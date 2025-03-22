@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv4l380wac7d5"]
+[gd_scene load_steps=3 format=3 uid="uid://bv4l380wac7d5"]
 
 [ext_resource type="AudioStream" uid="uid://faknd6btk64" path="res://audio/squirrel for looping.wav" id="1_vhql1"]
+[ext_resource type="AudioStream" uid="uid://fb4545mfwgak" path="res://audio/BRS_Wind_Heavy_Dry_Leaves_2.wav" id="2_es8j4"]
 
 [node name="MasterAudio" type="Node"]
 
 [node name="OST" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_vhql1")
 volume_db = -4.342
+autoplay = true
+
+[node name="Wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_es8j4")
+volume_db = 1.4
 autoplay = true
