@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed('jump') and is_on_floor():
+		$JumpPlayer.play()
 		velocity.y = jump_force
 		#print(coyote_jump_timer.time_left)
 		#if is_on_floor() or coyote_jump_timer.time_left > 0.0:

@@ -10,11 +10,13 @@ func grow():
 	var tween = get_tree().create_tween()
 	tween.connect("finished", _grow_finished)
 	tween.tween_property(self, "position", Vector2(global_position.x, global_position.y - 25), 1)
+	#$Sprout.play()
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and is_mouse_over and not is_growing:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			_create_trunk()
+			#$Sprout.play()
 
 func _create_trunk():
 	pass
