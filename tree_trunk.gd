@@ -10,7 +10,6 @@ var my_trunk_maker = TrunkMaker.new()
 #const TREE_TOP = preload("res://assets/tree-top.png")
 
 func grow():
-	Globals.water -= 1
 	is_growing = true
 	var start_y := global_position.y
 	var tween = get_tree().create_tween()
