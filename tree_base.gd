@@ -5,6 +5,8 @@ var tree_trunks: Array[StaticBody2D] = []
 var my_trunk_maker = TrunkMaker.new()
 const TREE_BASE = preload("res://assets/tree-base.png")
 const TREE_SPROUT = preload("res://assets/sprout.png")
+const FULL_TRUNK = preload("res://assets/tree-trunk.png")
+const HALF_TRUNK = preload("res://assets/half-trunk.png")
 var is_sprout := true
 
 func _ready() -> void:
@@ -13,7 +15,19 @@ func _ready() -> void:
 	$Sprite2D.texture = TREE_SPROUT
 	$Sprout.play()
 
-func _create_trunk():
+func set_full_trunk(idx:int) -> void:
+	if tree_trunks.size() > 1 and idx == 0:
+		var active_sprite: Sprite2D = tree_trunks[-2].get_child(1)
+		active_sprite.position.y -= 8
+		active_sprite.texture = FULL_TRUNK
+
+func set_half_trunk() -> void:
+	if tree_trunks.size() > 1:
+		var active_sprite: Sprite2D = tree_trunks[-2].get_child(1)
+		active_sprite.position.y += 8
+		active_sprite.texture = HALF_TRUNK
+
+func _create_trunk() -> void:
 	var new_trunk = my_trunk_maker.make_trunk(position, self)
 	tree_trunks.append(new_trunk)
 	input_pickable = false
