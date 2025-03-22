@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=4 uid="uid://c0a87wj562y2v"]
+
+[ext_resource type="PackedScene" uid="uid://djo4o00v5h1nb" path="res://level.tscn" id="1_babah"]
+
+[node name="PeteLevel03" instance=ExtResource("1_babah")]
+number_of_acorns = 1
+number_of_water = 4
+
+[node name="GroundTileMap" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAA=")
+
+[node name="StoneTileMap" parent="." index="2"]
+tile_map_data = PackedByteArray("AAAJAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAA=")
+
+[node name="Squirrel" parent="." index="3"]
+position = Vector2(17, 42)
+
+[node name="Goal" parent="." index="5"]
+position = Vector2(283, 135)
