@@ -5,10 +5,13 @@ var bounce_counter = 0
 @export var pause_before_sprouting := 1.0
 
 func _on_body_entered(body: Node) -> void:
+	print(body.is_class("GroundTileMapLayer"))
+	print(body)
+	print("GroundTileMap" in str(body))
 	if bounce_counter == 0:
 		$Impact.play()
 	bounce_counter += 1
-	if bounce_counter > 2 and body is GroundTileMapLayer:
+	if bounce_counter > 2 and "GroundTileMap" in str(body):
 		await get_tree().create_timer(pause_before_sprouting).timeout
 		#global_position.x = round(global_position.x / 50) * 50
 		#print(global_position.x)
