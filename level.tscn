@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://djo4o00v5h1nb"]
+[gd_scene load_steps=10 format=4 uid="uid://djo4o00v5h1nb"]
 
 [ext_resource type="Script" uid="uid://dm62xc0k28u7a" path="res://level.gd" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cddg4hewxllin" path="res://parallax_background.tscn" id="2_f2txt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqidtbh2dvujb" path="res://stone_tile_map.tscn" id="4_1ainy"]
 [ext_resource type="PackedScene" uid="uid://c72q38l25rwp6" path="res://ground_tile_map.tscn" id="5_f2txt"]
 [ext_resource type="Texture2D" uid="uid://dblrpue5j034g" path="res://assets/checkered-flag.png" id="7_n6hdu"]
+[ext_resource type="Script" uid="uid://cg7vgc28klb6b" path="res://canvas_layer.gd" id="8_km5ld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2txt"]
 size = Vector2(62, 35)
@@ -67,5 +68,28 @@ z_index = 2
 offset_right = 320.0
 offset_bottom = 192.0
 color = Color(0.160784, 0.113725, 0.168627, 0)
+
+[node name="ControlsOverlay" type="CanvasLayer" parent="."]
+script = ExtResource("8_km5ld")
+
+[node name="Label" type="Label" parent="ControlsOverlay"]
+z_index = 3
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 316.0
+offset_bottom = 174.0
+text = "
+WASD to Move
+Space to Jump
+Right Click to Drop an Acorn
+Left Click to Water a Tree
+R to Reset"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="ControlsOverlay"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 314.0
+offset_bottom = 175.0
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
