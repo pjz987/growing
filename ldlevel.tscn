@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=4 uid="uid://ce002i78b7s1t"]
+
+[ext_resource type="PackedScene" uid="uid://djo4o00v5h1nb" path="res://level.tscn" id="1_3sswo"]
+
+[node name="Level" instance=ExtResource("1_3sswo")]
+number_of_acorns = 1
+number_of_water = 3
+
+[node name="GroundTileMap" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAA=")
+
+[node name="StoneTileMap" parent="." index="2"]
+tile_map_data = PackedByteArray("AAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAA=")
+
+[node name="Squirrel" parent="." index="3"]
+position = Vector2(34, 132)
+
+[node name="Label" parent="ControlsOverlay" index="0"]
+visible = false
+
+[node name="Panel" parent="ControlsOverlay" index="1"]
+visible = false
