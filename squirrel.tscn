@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://7l3fex73xmm3"]
+[gd_scene load_steps=7 format=3 uid="uid://7l3fex73xmm3"]
 
 [ext_resource type="Script" uid="uid://wp2krpg58i32" path="res://squirrel.gd" id="1_k138s"]
 [ext_resource type="Texture2D" uid="uid://ce6ig54f0k62a" path="res://assets/squirrel.png" id="2_k138s"]
 [ext_resource type="AudioStream" uid="uid://fhxl8j87wlmo" path="res://audio/ESM_Ninja_Jump_2_Airy_Whoosh_Pass_By (1).wav" id="3_mrhax"]
+[ext_resource type="AudioStream" uid="uid://ckw6h3x87mbli" path="res://audio/ESM_GF_fx_concrete_one_shots_footstep_boots_running_dry_punchy_crispy_interior_9.wav" id="4_6shud"]
+[ext_resource type="AudioStream" uid="uid://d00qqicwoukdd" path="res://audio/FootstepsLeaves_BW.7944.wav" id="5_inqfv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k138s"]
 radius = 8.0
@@ -20,3 +22,11 @@ shape = SubResource("CapsuleShape2D_k138s")
 [node name="JumpPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_mrhax")
 pitch_scale = 0.8
+
+[node name="LandSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6shud")
+volume_db = 1.0
+pitch_scale = 0.44
+
+[node name="StepSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_inqfv")

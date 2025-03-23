@@ -23,7 +23,7 @@ texture = ExtResource("2_uenuv")
 
 [node name="Sprout" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_2j5hl")
-volume_db = 7.0
+volume_db = 3.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

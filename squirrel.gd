@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var left_the_ground = false
+var stepping = false
+#var xvel = velocity.x
 
 @export var acceleration = 512
 @export var jump_force = -256
@@ -10,10 +13,19 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta: float) -> void:
+	#xvel = velocity.x
+	#print(xvel)
 
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		left_the_ground = true
+		
+	if (is_on_floor() and left_the_ground):
+		left_the_ground = false
+		$LandSound.play()
+		#print("landsound!")
+		pass
 
 	# Handle jump.
 	if Input.is_action_just_pressed('jump') and is_on_floor():
@@ -36,3 +48,14 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.scale.x = direction
 	
 	move_and_slide()
+	
+	if (velocity.x != 0 and is_on_floor()):
+		if not stepping:
+			$StepSound.play()
+		stepping = true
+	
+	if stepping and (not direction or not is_on_floor()):
+		stepping = false
+		$StepSound.stop()
+		#print("stepping as stopped")
+		

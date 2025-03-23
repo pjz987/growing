@@ -6,6 +6,8 @@ const ACORN_SCENE = preload("res://acorn.tscn")
 @export var number_of_water := 0
 @export var fade_in_out_time := 1.0
 @export var next_level_path := "res://level.tscn"
+var fanfare = true
+var fanfare_sound = MasterAudio.get_child(2)
 
 @onready var goal_label: Label = $Goal/GoalLabel
 @onready var blackout_layer: ColorRect = $BlackoutLayer
@@ -41,6 +43,10 @@ func _input(event: InputEvent) -> void:
 		Utils.instantiate_scene_on_level(ACORN_SCENE, event.position)
 
 func _on_goal_body_entered(body: Node2D) -> void:
+	if fanfare:
+		fanfare_sound.play()
+		#print("fanfare is playing")
+		fanfare = false
 	goal_label.visible = true
 	blackout_layer.visible = true
 	blackout_layer_2.visible = true
