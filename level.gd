@@ -26,6 +26,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("quit"):
+		blackout_layer.visible = true
+		blackout_layer_2.visible = true
+		await get_tree().create_tween().tween_property(blackout_layer, "color:a", 1.0, fade_in_out_time).finished
+		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_tween().tween_property(blackout_layer_2, "color:a", 1.0, fade_in_out_time).finished
+		await get_tree().create_timer(0.5).timeout
+		get_tree().quit()
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT

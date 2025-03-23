@@ -5,6 +5,7 @@
 [node name="PeteLevel03" instance=ExtResource("1_babah")]
 number_of_acorns = 1
 number_of_water = 4
+next_level_path = "res://victory_level.tscn"
 
 [node name="GroundTileMap" parent="." index="1"]
 tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAA=")
