@@ -18,7 +18,7 @@ number_of_water = 6
 next_level_path = "res://pete_level_01.tscn"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_f2txt")]
-scroll_offset = Vector2(1057.24, 0)
+scroll_offset = Vector2(358.257, 0)
 
 [node name="GroundTileMap" parent="." instance=ExtResource("5_f2txt")]
 tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAA=")
