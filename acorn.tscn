@@ -25,7 +25,6 @@ shape = SubResource("CapsuleShape2D_erywe")
 
 [node name="Impact" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_cq1xx")
-volume_db = 2.0
-pitch_scale = 0.9
+pitch_scale = 0.7
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

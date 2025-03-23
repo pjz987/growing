@@ -1,4 +1,4 @@
-@tool extends ParallaxBackground
+extends ParallaxBackground
 
 @export var scroll_speed := 1.0
 
