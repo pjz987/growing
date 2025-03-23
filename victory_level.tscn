@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=4 uid="uid://bq6ntbyujdbqm"]
+
+[ext_resource type="PackedScene" uid="uid://djo4o00v5h1nb" path="res://level.tscn" id="1_bcrgw"]
+[ext_resource type="Script" uid="uid://cnxs7l0nblw0b" path="res://nice_job.gd" id="2_83a1k"]
+[ext_resource type="PackedScene" uid="uid://b5fs103misupn" path="res://acorn.tscn" id="2_hvrpx"]
+
+[node name="VictoryLevel" instance=ExtResource("1_bcrgw")]
+number_of_acorns = 5
+number_of_water = 100
+next_level_path = "res://level.tscn"
+
+[node name="GroundTileMap" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAA=")
+
+[node name="Squirrel" parent="." index="3"]
+position = Vector2(158, 45)
+
+[node name="Goal" parent="." index="5"]
+position = Vector2(177, 217)
+
+[node name="Sprite2D" parent="Goal" index="2"]
+position = Vector2(-5, -168)
+
+[node name="Sprite2D2" parent="Goal" index="3"]
+position = Vector2(-30, -168)
+
+[node name="NiceJob" type="Label" parent="." index="7"]
+z_index = 1
+z_as_relative = false
+offset_left = 89.0
+offset_top = 82.0
+offset_right = 232.0
+offset_bottom = 131.0
+text = "Thanks for Playing
+Esc to Quit"
+horizontal_alignment = 1
+script = ExtResource("2_83a1k")
+
+[node name="Acorn" parent="." index="9" instance=ExtResource("2_hvrpx")]
+position = Vector2(50, 32)
+
+[node name="Acorn2" parent="." index="10" instance=ExtResource("2_hvrpx")]
+position = Vector2(76, 69)
+
+[node name="Acorn3" parent="." index="11" instance=ExtResource("2_hvrpx")]
+position = Vector2(103, 41)
+
+[node name="Acorn4" parent="." index="12" instance=ExtResource("2_hvrpx")]
+position = Vector2(208, 106)
+
+[node name="Acorn5" parent="." index="13" instance=ExtResource("2_hvrpx")]
+position = Vector2(270, 59)
+
+[node name="Acorn6" parent="." index="14" instance=ExtResource("2_hvrpx")]
+position = Vector2(233, 50)
+
+[node name="Acorn7" parent="." index="15" instance=ExtResource("2_hvrpx")]
+position = Vector2(113, 111)
