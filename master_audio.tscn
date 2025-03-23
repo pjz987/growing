@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv4l380wac7d5"]
+[gd_scene load_steps=5 format=3 uid="uid://bv4l380wac7d5"]
 
 [ext_resource type="AudioStream" uid="uid://dnfp35m3n4t5j" path="res://audio/sqedit.wav" id="1_mc3ab"]
 [ext_resource type="AudioStream" uid="uid://fb4545mfwgak" path="res://audio/BRS_Wind_Heavy_Dry_Leaves_2.wav" id="2_es8j4"]
 [ext_resource type="AudioStream" uid="uid://c7nn2etmigrcy" path="res://audio/applause edit.wav" id="3_mc3ab"]
+[ext_resource type="AudioStream" uid="uid://cjvmjudy8v1c2" path="res://audio/thanks for playing.wav" id="4_c5aqd"]
 
 [node name="MasterAudio" type="Node"]
 
@@ -18,3 +19,7 @@ autoplay = true
 
 [node name="Applause" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_mc3ab")
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_c5aqd")
+volume_db = -2.0
