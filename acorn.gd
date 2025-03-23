@@ -5,9 +5,9 @@ var bounce_counter = 0
 @export var pause_before_sprouting := 1.0
 
 func _on_body_entered(body: Node) -> void:
-	print(body.is_class("GroundTileMapLayer"))
-	print(body)
-	print("GroundTileMap" in str(body))
+	#print(body.is_class("GroundTileMapLayer"))
+	#print(body)
+	#print("GroundTileMap" in str(body))
 	if bounce_counter == 0:
 		$Impact.play()
 	bounce_counter += 1

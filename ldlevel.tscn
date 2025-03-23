@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=4 uid="uid://ce002i78b7s1t"]
+[gd_scene load_steps=2 format=4 uid="uid://cub2jpks6x4mh"]
 
 [ext_resource type="PackedScene" uid="uid://djo4o00v5h1nb" path="res://level.tscn" id="1_3sswo"]
 
 [node name="Level" instance=ExtResource("1_3sswo")]
 number_of_acorns = 1
 number_of_water = 3
+next_level_path = "res://pete_level_03.tscn"
 
 [node name="GroundTileMap" parent="." index="1"]
 tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAA=")
