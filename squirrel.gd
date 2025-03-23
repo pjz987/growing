@@ -6,7 +6,7 @@ var stepping = false
 #var xvel = velocity.x
 
 @export var acceleration = 512
-@export var jump_force = -256
+@export var jump_force = -290
 @export var max_speed = 128
 @export var friction = 0.2
 @onready var sprite_2d: Sprite2D = $Sprite2D
