@@ -3,7 +3,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var acceleration = 512
-@export var jump_force = -256
+@export var jump_force = -290
 @export var max_speed = 128
 @export var friction = 0.2
 @onready var sprite_2d: Sprite2D = $Sprite2D
