@@ -2,7 +2,6 @@ extends RigidBody2D
 
 const TREE_SCENE = preload("res://tree_base.tscn")
 var bounce_counter = 0
-var blork = []
 var impacted = false
 @export var pause_before_sprouting := 1.0
 
@@ -24,6 +23,6 @@ func _on_body_entered(body: Node) -> void:
 
 func _physics_process(delta: float) -> void:
 	if $PlantTimer.time_left == 0 and impacted:
-		print("acorn timeout")
+		#print("acorn timeout")
 		Utils.instantiate_scene_on_level(TREE_SCENE, Vector2(global_position.x, global_position.y))
 		queue_free()
