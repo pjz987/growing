@@ -27,4 +27,8 @@ shape = SubResource("CapsuleShape2D_erywe")
 stream = ExtResource("3_cq1xx")
 pitch_scale = 0.7
 
+[node name="PlantTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

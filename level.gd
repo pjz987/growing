@@ -43,15 +43,16 @@ func _input(event: InputEvent) -> void:
 		Utils.instantiate_scene_on_level(ACORN_SCENE, event.position)
 
 func _on_goal_body_entered(body: Node2D) -> void:
-	if fanfare:
-		fanfare_sound.play()
-		#print("fanfare is playing")
-		fanfare = false
-	goal_label.visible = true
-	blackout_layer.visible = true
-	blackout_layer_2.visible = true
-	await get_tree().create_tween().tween_property(blackout_layer, "color:a", 1.0, fade_in_out_time).finished
-	await get_tree().create_timer(1.0).timeout
-	await get_tree().create_tween().tween_property(blackout_layer_2, "color:a", 1.0, fade_in_out_time).finished
-	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_packed(next_level_scene)
+	if "Squirrel" in str(body):
+		if fanfare:
+			fanfare_sound.play()
+			#print("fanfare is playing")
+			fanfare = false
+		goal_label.visible = true
+		blackout_layer.visible = true
+		blackout_layer_2.visible = true
+		await get_tree().create_tween().tween_property(blackout_layer, "color:a", 1.0, fade_in_out_time).finished
+		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_tween().tween_property(blackout_layer_2, "color:a", 1.0, fade_in_out_time).finished
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_packed(next_level_scene)
