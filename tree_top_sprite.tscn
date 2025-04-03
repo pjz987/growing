@@ -34,6 +34,8 @@ emission_point_texture = SubResource("ImageTexture_lsr82")
 emission_color_texture = SubResource("ImageTexture_sqsbd")
 emission_point_count = 1338
 gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 2.0
 
 [node name="TreeTopSprite" type="Sprite2D"]
 texture = ExtResource("1_dpt40")
